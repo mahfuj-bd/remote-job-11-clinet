@@ -1,11 +1,11 @@
 
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { useContext } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import auth from "../../firebase/firebase.config";
-import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2';
 import { TbBrandGoogle } from 'react-icons/tb'
+import auth from "../../firebase/firebase.config";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useContext } from 'react';
 
 
 
