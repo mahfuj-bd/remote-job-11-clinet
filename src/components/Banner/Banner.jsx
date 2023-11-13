@@ -5,7 +5,7 @@ const Banner = () => {
         <div className="flex-1">
             <img
           src="https://i.ibb.co/kcN5K0n/mega-creator-17-2x.png"
-          className="w-full rounded-lg shadow-2xl"
+          className="w-full"
         />
         </div>
         <div className="flex-1">
