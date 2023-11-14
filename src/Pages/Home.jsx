@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Banner from "../components/Banner/Banner";
 import Contact from "../components/Contact/Contact";
 
@@ -36,7 +36,7 @@ const Home = () => {
                       <h2 className="card-title">{alljob.jobTitle}</h2>
                       <p>{alljob.postingDate}</p>
                       <div className="card-actions justify-end">
-                        <button className="btn btn-primary">view Details</button>
+                        <button className="btn btn-primary"><Link to={`/jobdetails/${alljob._id}`}>view Details</Link></button>
                       </div>
                     </div>
                   </div>
@@ -54,7 +54,7 @@ const Home = () => {
                       <h2 className="card-title">{onSiteJob.jobTitle}</h2>
                       <p>{onSiteJob.postingDate}</p>
                       <div className="card-actions justify-end">
-                        <button className="btn btn-primary">view Details</button>
+                        <button className="btn btn-primary"><Link to={`/jobdetails/${onSiteJob._id}`}>view Details</Link></button>
                       </div>
                     </div>
                   </div>
@@ -71,7 +71,7 @@ const Home = () => {
                       <h2 className="card-title">{remoteJob.jobTitle}</h2>
                       <p>{remoteJob.postingDate}</p>
                       <div className="card-actions justify-end">
-                        <button className="btn btn-primary">view Details</button>
+                        <button className="btn btn-primary"><Link to={`/jobdetails/${remoteJob._id}`}>view Details</Link></button>
                       </div>
                     </div>
                   </div>
@@ -88,7 +88,7 @@ const Home = () => {
                       <h2 className="card-title">{hybridJob.jobTitle}</h2>
                       <p>{hybridJob.postingDate}</p>
                       <div className="card-actions justify-end">
-                        <button className="btn btn-primary">view Details</button>
+                        <button className="btn btn-primary"><Link to={`/jobdetails/${hybridJob._id}`}>view Details</Link></button>
                       </div>
                     </div>
                   </div>
@@ -105,7 +105,7 @@ const Home = () => {
                       <h2 className="card-title">{partTimeJob.jobTitle}</h2>
                       <p>{partTimeJob.postingDate}</p>
                       <div className="card-actions justify-end">
-                        <button className="btn btn-primary">view Details</button>
+                        <button className="btn btn-primary"><Link to={`/jobdetails/${partTimeJob._id}`}>view Details</Link></button>
                       </div>
                     </div>
                   </div>
