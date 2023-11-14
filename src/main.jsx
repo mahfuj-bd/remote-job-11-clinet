@@ -9,6 +9,10 @@ import Register from "./components/Register/Register";
 import AuthProvider from "./components/AuthProvider/AuthProvider";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Contact from "./components/Contact/Contact";
+import AddAJobs from "./Pages/AddAJobs/AddAJobs";
+import AllJObs from "./Pages/AllJObs/AllJObs";
+import AppliedJobs from "./Pages/AppliedJobs/AppliedJobs";
+import Blogs from "./Pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +23,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () =>fetch('http://localhost:5000/jobs')
       },
       {
         path: "/login",
@@ -31,6 +36,22 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/addJobs",
+        element: <AddAJobs></AddAJobs>,
+      },
+      {
+        path: "/allJobs",
+        element: <AllJObs></AllJObs>,
+      },
+      {
+        path: "/appliedJobs",
+        element: <AppliedJobs></AppliedJobs>,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
       },
     ],
   },
