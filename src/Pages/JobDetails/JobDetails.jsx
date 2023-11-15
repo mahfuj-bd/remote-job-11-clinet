@@ -1,10 +1,15 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../components/AuthProvider/AuthProvider";
 
 const JobDetails = () => {
     const jobDetail = useLoaderData();
+    const {user} = useContext(AuthContext);
+
     console.log(jobDetail);
     const handleFormSubmit = (e) =>{
         e.preventDefualt()
+
 
     }
     return (
@@ -21,7 +26,7 @@ const JobDetails = () => {
                       document.getElementById("my_modal_4").showModal()
                     }
                   >
-                    Book Now
+                    Apply Now
                   </button>
                   <dialog id="my_modal_4" className="modal">
                     <div className="modal-box w-11/12 max-w-5xl">
@@ -34,9 +39,9 @@ const JobDetails = () => {
                               </span>
                             </label>
                             <input
-                              type="text"
-                              // placeholder="Name"
-                            //   defaultValue={card.service_provider_name}
+                              type="text"                            
+                              defaultValue={user.displayName
+                              }
                               name="name"
                               className="input input-bordered input-info w-full cursor-none"
                               readOnly
@@ -51,9 +56,8 @@ const JobDetails = () => {
                               </span>
                             </label>
                             <input
-                              type="email"
-                              // placeholder="Email"
-                            //   defaultValue={user?.email}
+                              type="email"                       
+                              defaultValue={user?.email}
                               name="email"
                               className="input input-bordered input-info w-full cursor-none"
                               readOnly
