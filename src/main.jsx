@@ -9,11 +9,11 @@ import Register from "./components/Register/Register";
 import AuthProvider from "./components/AuthProvider/AuthProvider";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Contact from "./components/Contact/Contact";
-import AddAJobs from "./Pages/AddAJobs/AddAJobs";
-import AllJObs from "./Pages/AllJObs/AllJObs";
 import AppliedJobs from "./Pages/AppliedJobs/AppliedJobs";
+import AllJObs from "./Pages/AllJObs/AllJObs";
 import Blogs from "./Pages/Blogs/Blogs";
 import JobDetails from "./Pages/JobDetails/JobDetails";
+import AddJobs from "./components/AddJobs/AddJobs";
 
 const router = createBrowserRouter([
   {
@@ -40,15 +40,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/addJobs",
-        element: <AddAJobs></AddAJobs>,
-      },
-      {
-        path: "/allJobs",
-        element: <AllJObs></AllJObs>,
+       element: <AddJobs></AddJobs>
       },
       {
         path: "/appliedJobs",
         element: <AppliedJobs></AppliedJobs>,
+      },
+      {
+        path: "/allJobs",
+        element: <AllJObs></AllJObs>,
       },
       {
         path: "/blogs",

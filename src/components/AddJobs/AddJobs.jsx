@@ -1,9 +1,12 @@
 
 import Swal from "sweetalert2";
-import JobDetails from './../JobDetails/JobDetails';
+
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 const AddJobs = () => {
+    const {user} = useContext(AuthContext)
     const handleFormSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -15,7 +18,7 @@ const AddJobs = () => {
     const short_description = form.short_description.value;
     const postingDate = form.postingDate.value;
     const applicationDeadline = form.applicationDeadline.value;
-    const product = {
+    const newJob = {
       jobBanner,
       jobTitle,
       category,
@@ -25,11 +28,11 @@ const AddJobs = () => {
       applicationDeadline,
       postedBy,
     };
-    console.log(product);
-    fetch("https://automotiv.vercel.app/products", {
+    console.log(newJob);
+    fetch("http://localhost:5000/jobs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(product),
+      body: JSON.stringify(newJob),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -132,11 +135,11 @@ const AddJobs = () => {
                       </span>
                     </label>
                     <input
-                      type="text"
-                      placeholder="Brand Name"
+                      type="text"  
+                      value={user?.displayName}                  
                       name="username"
                       className="input input-bordered input-success w-full "
-                      required
+                      readOnly
                     />
                   </div>
                   <br />
@@ -191,10 +194,8 @@ const AddJobs = () => {
                     </label>
                     <input
                       type="date"
-                      placeholder="postingDate
-"
-                      name="postingDate
-"
+                      placeholder="postingDate"
+                      name="postingDate"
                       className="input input-bordered input-success w-full "
                       required
                     />
@@ -208,10 +209,8 @@ const AddJobs = () => {
                     </label>
                     <input
                       type="date"
-                      placeholder="postingDate
-"
-                      name="applicationDeadline
-"
+                      placeholder="postingDate"
+                      name="applicationDeadline"
                       className="input input-bordered input-success w-full "
                       required
                     />

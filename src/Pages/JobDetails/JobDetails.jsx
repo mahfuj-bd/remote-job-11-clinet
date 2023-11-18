@@ -1,17 +1,56 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../components/AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const JobDetails = () => {
     const jobDetail = useLoaderData();
     const {user} = useContext(AuthContext);
 
     console.log(jobDetail);
-    const handleFormSubmit = (e) =>{
-        e.preventDefualt()
+    const handleFormSubmit = (e) => {
+      e.preventDefault();
+      const name = e.target.name.value
+      const email = e.target.email.value
+      const resumeLink = e.target.resumeLink.value
+      const appliedjob = {name, email, resumeLink}
+      console.log(appliedjob);
+      // console.log(Date.now());
+      const date = new Date(Date.now());
+      const d = date.toISOString();
+    
+      
+     
+     
 
-
-    }
+      
+      if (
+        jobDetail.postedBy !== user?.displayName &&
+        jobDetail.applicationDeadline > d
+      ) {
+        console.log("you can apply this job", appliedjob);
+  
+        fetch("http://localhost:5000/appliedJobs", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(appliedjob),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            if (data.insertedId) {
+              Swal.fire(
+                "Good job!",
+                "Jobs has added in Applied Jobs!",
+                "success"
+              );
+            }
+          });
+  
+      } else {
+        Swal.fire("SORRY!", "You cant not apply in this job!", "error");
+      }
+    };
     return (
         <div>
             <div key={jobDetail._id}>
