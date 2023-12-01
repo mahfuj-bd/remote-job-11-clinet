@@ -7,7 +7,7 @@ const AllJObs = () => {
         <div>
         <div>
           <div className="overflow-x-auto">
-            <table className="table bg-green-100 text-main-blue-50">
+            <table className="table ">
               {/* head */}
               <thead>
                 <tr>

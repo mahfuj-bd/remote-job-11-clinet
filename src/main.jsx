@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () =>fetch('http://localhost:5000/jobs')
+        loader: () =>fetch('https://remote-job-11-server.vercel.app/jobs')
       },
       {
         path: "/login",
@@ -54,14 +54,14 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <AppliedJobs></AppliedJobs>,
         </PrivateRoute>,
-        loader: () => fetch("http://localhost:5000/appliedJobs"),
+        loader: () => fetch("https://remote-job-11-server.vercel.app/appliedJobs"),
       },
       {
         path: "/allJobs",
         element: <PrivateRoute>
           <AllJObs></AllJObs>,
         </PrivateRoute>,
-        loader: () =>fetch('http://localhost:5000/jobs')
+        loader: () =>fetch('https://remote-job-11-server.vercel.app/jobs')
       },
       {
         path: "/about",
@@ -70,12 +70,12 @@ const router = createBrowserRouter([
       {
         path: "/myJobs",
         element: <MyJobs></MyJobs>,
-        loader: () => fetch("http://localhost:5000/jobs"),
+        loader: () => fetch("https://remote-job-11-server.vercel.app/jobs"),
       },
       {
         path: "/updateJob/:_id",
         element: <UpdateJob></UpdateJob>,
-        loader: ({ params}) => fetch(`http://localhost:5000/jobs/${params._id}`),
+        loader: ({ params}) => fetch(`https://remote-job-11-server.vercel.app/jobs/${params._id}`),
       },
       {
         path: "/blogs",
@@ -84,7 +84,7 @@ const router = createBrowserRouter([
       {
         path: "/jobdetails/:_id",
         element: <JobDetails></JobDetails>,
-        loader : ({params}) => fetch (`http://localhost:5000/jobdetails/${params._id}`)
+        loader : ({params}) => fetch (`https://remote-job-11-server.vercel.app/jobdetails/${params._id}`)
       },
     ],
   },

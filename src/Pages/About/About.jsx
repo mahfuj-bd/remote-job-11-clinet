@@ -5,7 +5,7 @@ const About = () => {
             <div>
           <h3 className="text-3xl font-bold text-center py-20">About Us</h3>
         </div>
-            <div className="flex">
+            <div className="lg:flex flex-wrap">
             <div className="flex-1">
                 <img className="" src="https://i.ibb.co/HTMGWTg/about.jpg" alt="" />
             </div>

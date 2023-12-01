@@ -30,7 +30,7 @@ const UpdateJob = () => {
          postedBy,
        };
        console.log(updatedJob);
-       fetch(`http://localhost:5000/jobs/${job._id}`, {
+       fetch(`https://remote-job-11-server.vercel.app/jobs/${job._id}`, {
          method: "PUT",
          headers: { "Content-Type": "application/json" },
          body: JSON.stringify(updatedJob),

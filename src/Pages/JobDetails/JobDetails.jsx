@@ -25,7 +25,7 @@ const JobDetails = () => {
       ) {
         console.log("you can apply this job", appliedjob);
   
-        fetch("http://localhost:5000/appliedJobs", {
+        fetch("https://remote-job-11-server.vercel.app/appliedJobs", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(appliedjob),

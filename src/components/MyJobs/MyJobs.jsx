@@ -27,7 +27,7 @@ const MyJobs = () => {
          }).then((result) => {
            if (result.isConfirmed) {
              fetch(
-               `http://localhost:5000/jobs/${_id}`,
+               `https://remote-job-11-server.vercel.app/jobs/${_id}`,
                {
                  method: "DELETE",
                }
