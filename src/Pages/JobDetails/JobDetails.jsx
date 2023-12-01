@@ -17,12 +17,7 @@ const JobDetails = () => {
       console.log(appliedjob);
       // console.log(Date.now());
       const date = new Date(Date.now());
-      const d = date.toISOString();
-    
-      
-     
-     
-
+      const d = date.toISOString();   
       
       if (
         jobDetail.postedBy !== user?.displayName &&
@@ -52,15 +47,21 @@ const JobDetails = () => {
       }
     };
     return (
-        <div>
+        <div className="container mx-auto ">
             <div key={jobDetail._id}>
                   <div className="card w-96 bg-base-100 shadow-xl">
                     <div className="card-body">
+                    <figure><img src={jobDetail.jobBanner} alt="Shoes" /></figure>
                       <h2 className="card-title">{jobDetail.jobTitle}</h2>
                       <p>{jobDetail.postingDate}</p>
+                      <p>{jobDetail.postedBy}</p>
+                      <p>{jobDetail.applicationDeadline}</p>
+                      <p>{jobDetail.salaryRange}</p>
+                      <p>{jobDetail.applicationsNumber}</p>
+                      <p>{jobDetail.applicationsNumber}</p>
                       <div className="card-actions justify-end">
                       <button
-                    className="btn tracking-widest btn-success font-semibold"
+                    className="btn tracking-widest btn-primary font-semibold"
                     onClick={() =>
                       document.getElementById("my_modal_4").showModal()
                     }
@@ -127,7 +128,7 @@ const JobDetails = () => {
                       <div className="modal-action">
                         <form method="dialog">
                           {/* if there is a button, it will close the modal */}
-                          <button className="btn  btn-success border-2 border-blue-600 text-blue-700 bg-blue-400">
+                          <button className="btn  btn-primary border-2 border-blue-600 text-blue-700 bg-blue-400">
                             Cancel
                           </button>
                         </form>

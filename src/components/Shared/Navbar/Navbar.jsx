@@ -1,10 +1,20 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+
 
 const Navbar = () => {
+  const {user, logOut} = useContext(AuthContext);
   const navItems = (
     <>
       <li>
         <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/about">About</Link>
+      </li>
+      <li>
+        <Link to="/blogs">Blogs</Link>
       </li>
       <li>
         <Link to="/contact">Contact Us</Link>
@@ -19,13 +29,7 @@ const Navbar = () => {
         <Link to="/appliedJobs">Applied Jobs</Link>
       </li>
       <li>
-        <Link to="/blogs">Blogs</Link>
-      </li>
-      <li>
-        <Link to="/login">Log In</Link>
-      </li>
-      <li>
-        <Link to="/register">Register</Link>
+        <Link to="/myJobs">My Jobs</Link>
       </li>
       <div className="dropdown dropdown-hover">
         <label tabIndex={0} className="btn">
@@ -73,14 +77,30 @@ const Navbar = () => {
             {navItems}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <a className="btn btn-ghost normal-case text-2xl">JOB Career</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
-      </div>
+        {
+                    !user?
+                    <div>
+                        
+                        <button className="btn"><Link to='/login'>LogIn</Link></button>
+
+                    </div>
+                    
+                    :
+                    <div className="flex items-center">
+                        <div>
+                            <img className="w-10 rounded-full mr-3" src={user.photoURL} alt="" />
+                            <p>{user.displayName}</p>
+                        </div>
+                        <button onClick={logOut} className="btn">Log Out</button>
+                    </div>  
+                }
+        </div>
     </div>
   );
 };

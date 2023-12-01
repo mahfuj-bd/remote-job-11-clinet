@@ -9,7 +9,7 @@ const Banner = () => {
         />
         </div>
         <div className="flex-1">
-          <h1 className="text-5xl font-bold">Find world’s best remote job!</h1>
+          <h1 className="text-5xl font-bold ">Find worlds best remote job!</h1>
           <p className="py-6">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et

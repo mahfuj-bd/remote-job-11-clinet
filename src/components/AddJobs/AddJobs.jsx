@@ -53,7 +53,7 @@ const AddJobs = () => {
         {/* main */}
         <div className="max-w-screen-2xl mx-auto ">
           <div
-            className="hero min-h-screen bg-green-50 rounded-xl"
+            className="hero min-h-screen rounded-xl"
             data-aos="fade-down"
             data-aos-easing="linear"
             data-aos-duration="3000"
@@ -108,7 +108,7 @@ const AddJobs = () => {
                       type="text"
                       placeholder="Image url"
                       name="image_url"
-                      className="input input-bordered input-success w-full "
+                      className="input input-bordered input-primary w-full "
                       required
                     />
                   </div>
@@ -123,7 +123,7 @@ const AddJobs = () => {
                       type="text"
                       placeholder="Job title"
                       name="name"
-                      className="input input-bordered input-success w-full "
+                      className="input input-bordered input-primary w-full "
                       required
                     />
                   </div>
@@ -138,14 +138,14 @@ const AddJobs = () => {
                       type="text"  
                       value={user?.displayName}                  
                       name="username"
-                      className="input input-bordered input-success w-full "
+                      className="input input-bordered input-primary w-full "
                       readOnly
                     />
                   </div>
                   <br />
                   <select
                     name="category"
-                    className="select select-success w-full "
+                    className="select select-primary w-full "
                   >
                     <option disabled selected>
                       Job Category
@@ -166,7 +166,7 @@ const AddJobs = () => {
                       type="text"
                       placeholder="Price"
                       name="price"
-                      className="input input-bordered input-success w-full "
+                      className="input input-bordered input-primary w-full "
                       required
                     />
                   </div>
@@ -181,7 +181,7 @@ const AddJobs = () => {
                       type="text"
                       placeholder="Short description"
                       name="short_description"
-                      className="input input-bordered input-success w-full "
+                      className="input input-bordered input-primary w-full "
                       required
                     />
                   </div>
@@ -196,7 +196,7 @@ const AddJobs = () => {
                       type="date"
                       placeholder="postingDate"
                       name="postingDate"
-                      className="input input-bordered input-success w-full "
+                      className="input input-bordered input-primary w-full "
                       required
                     />
                   </div>
@@ -211,7 +211,7 @@ const AddJobs = () => {
                       type="date"
                       placeholder="postingDate"
                       name="applicationDeadline"
-                      className="input input-bordered input-success w-full "
+                      className="input input-bordered input-primary w-full "
                       required
                     />
                   </div>
@@ -220,7 +220,7 @@ const AddJobs = () => {
                   <input
                     type="submit"
                     value="ADD JOB"
-                    className="btn btn-success w-full text-xl tracking-widest font-bold"
+                    className="btn btn-primary w-full text-xl tracking-widest font-bold"
                   />
                 </form>
               </div>

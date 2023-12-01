@@ -14,6 +14,10 @@ import AllJObs from "./Pages/AllJObs/AllJObs";
 import Blogs from "./Pages/Blogs/Blogs";
 import JobDetails from "./Pages/JobDetails/JobDetails";
 import AddJobs from "./components/AddJobs/AddJobs";
+import MyJobs from "./components/MyJobs/MyJobs";
+import UpdateJob from "./components/UpdateJob/UpdateJob";
+import About from "./Pages/About/About";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -40,15 +44,38 @@ const router = createBrowserRouter([
       },
       {
         path: "/addJobs",
-       element: <AddJobs></AddJobs>
+       element: <PrivateRoute>
+        <AddJobs></AddJobs>
+       </PrivateRoute>
+       
       },
       {
         path: "/appliedJobs",
-        element: <AppliedJobs></AppliedJobs>,
+        element: <PrivateRoute>
+          <AppliedJobs></AppliedJobs>,
+        </PrivateRoute>,
+        loader: () => fetch("http://localhost:5000/appliedJobs"),
       },
       {
         path: "/allJobs",
-        element: <AllJObs></AllJObs>,
+        element: <PrivateRoute>
+          <AllJObs></AllJObs>,
+        </PrivateRoute>,
+        loader: () =>fetch('http://localhost:5000/jobs')
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/myJobs",
+        element: <MyJobs></MyJobs>,
+        loader: () => fetch("http://localhost:5000/jobs"),
+      },
+      {
+        path: "/updateJob/:_id",
+        element: <UpdateJob></UpdateJob>,
+        loader: ({ params}) => fetch(`http://localhost:5000/jobs/${params._id}`),
       },
       {
         path: "/blogs",
