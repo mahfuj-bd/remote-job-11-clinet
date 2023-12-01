@@ -81,7 +81,14 @@ const Blogs = () => {
         - Explain My code.
         </div>
         <div className="collapse-content">
-          <p>hello</p>
+          <h3>Five Special Features on my wbsite</h3>   
+          <ul>
+            <li>Dynamic website</li>
+            <li>Athuntication</li>
+            <li> Private Route</li>
+            <li>MongoDB Database</li>
+            <li>Express Server</li>
+            </ul>
         </div>
       </div>
     </div>
